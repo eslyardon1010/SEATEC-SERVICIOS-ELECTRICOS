@@ -1,0 +1,805 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+header {
+    z-index: 1010;
+    top: 0;
+    left: 0;
+    transition: all .4s ease;
+    width: 100%;
+    height: 650px;
+    background-image: url(../images/SEATECQUIENESSOMOSSERVICIOSELECTRICOS.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    color: black;
+    text-align: center;
+}
+
+#barra {
+    height: 65px;
+    width: 100%;
+    background-color: black;
+}
+
+header img {
+    margin: 0;
+    margin-left: 0;
+}
+
+#logo {
+    width: 250px;
+    margin-left: -50rem;
+}
+
+ul {
+    z-index: 1010;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+}
+
+li {
+    float: left;
+}
+
+
+/*Estilo para los links*/
+
+li a {
+    position: relative;
+    box-sizing: border-box;
+    z-index: 1010;
+    display: block;
+    min-width: 120px;
+    /*espacio entre link*/
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 14;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 1rem;
+    width: 100%;
+}
+
+
+/*LINK PRINCIPALES*/
+
+li:hover a {
+    color: yellow;
+}
+
+li:hover ul a {
+    background: black;
+    color: white;
+    height: 35px;
+    border-bottom: none;
+}
+
+
+/*Hover para enlaces desplegados*/
+
+li:hover ul a:hover {
+    color: yellow;
+    background: #222;
+}
+
+
+/*Ocultar enlaces desplegables hasta que se necesiten*/
+
+li ul {
+    display: none;
+}
+
+
+/*Hacer vínculos desplegables verticales*/
+
+li ul li {
+    z-index: 1010;
+    display: block;
+    float: none;
+}
+
+li ul li a {
+    top: 0;
+    z-index: 1010;
+    width: auto;
+    min-width: 100px;
+    padding: 0 19px;
+}
+
+#menu {
+    top: 0;
+    padding: 0.5rem 0;
+    margin-left: 28rem;
+    position: absolute;
+}
+
+
+/*PARA LOS LINKS DESPLEGABLES*/
+
+.hidden {
+    position: relative;
+    border-bottom: none;
+}
+
+
+/*Visualizar el menú desplegable en hover*/
+
+ul li a:hover+.hidden,
+.hidden:hover {
+    z-index: 1010;
+    display: block;
+    cursor: pointer;
+}
+
+
+/*Estilos boton desplegar menu*/
+
+.show-menu {
+    z-index: 1010;
+    font-weight: bold;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-decoration: none;
+    color: #fff;
+    background: none;
+    text-align: center;
+    padding: 7px 0;
+    display: none;
+    background: black;
+    position: absolute;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+
+/*Mostrar menú cuando se marca la casilla de verificación invisible*/
+
+input[type=checkbox]:checked~#menu {
+    z-index: 1010;
+    display: block;
+}
+
+
+/*Estilo responsivo ancho menor de 600px*/
+
+@media screen and (max-width:600px) {
+    #menu {
+        top: 1.5rem;
+        margin-left: 0;
+    }
+    #logo {
+        display: none;
+    }
+    /*Hacer que los vínculos desplegables aparezcan en línea*/
+    ul {
+        z-index: 1010;
+        position: static;
+        display: none;
+    }
+    /*Crear espacio vertical*/
+    li {
+        padding: 0;
+        top: 0;
+        background: black;
+    }
+    /*Todos los enlaces del menú de ancho completo*/
+    ul li,
+    li a {
+        z-index: 1010;
+        width: 100%;
+        margin: 0;
+    }
+    ul .hidden li:hover {
+        background: #222;
+    }
+    .show-menu {
+        z-index: 0;
+        display: block;
+        cursor: pointer;
+        position: relative;
+        padding: 0;
+    }
+    li a {
+        border-bottom: none;
+    }
+}
+
+header .texto {
+    margin-top: 152px;
+}
+
+header .titulo {
+    font-size: 85px;
+}
+
+header .subtitulo {
+    font-size: 42px;
+    font-weight: 300;
+    margin-bottom: 32px;
+}
+
+.boton {
+    display: inline-block;
+    padding: 6px;
+    width: 128px;
+    border: 1px solid black;
+    color: black;
+    font-size: 19px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 16px;
+}
+
+.sesgoabajo {
+    z-index: 10;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 35vh 100vw;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+}
+
+.sesgoarriba {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 35vh 100vw 0 0;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    padding: 52px 0;
+}
+
+.sobre-nosotros {
+    text-align: center;
+    font-size: 56px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.slogan {
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.parrafo {
+    margin-bottom: 13px;
+    font-weight: 300;
+    text-align: justify;
+    line-height: 24px;
+    color: rgb(24, 16, 16);
+}
+
+.acerca-de.boton {
+    display: inline-block;
+    padding: 6px;
+    width: 128px;
+    font-weight: 300;
+    border: 1px solid rgba(24, 16, 16, .7);
+    color: rgb(24, 16, 16);
+    font-size: 19px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 16px;
+    margin-top: 24px;
+}
+
+.galeria {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+
+.imagenes {
+    width: 20%;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.imagenes img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.encima {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(52, 73, 94, 0.815);
+}
+
+.encima h2 {
+    position: relative;
+    top: 45%;
+    text-align: center;
+    color: white;
+}
+
+.encima div {
+    position: relative;
+    display: block;
+    top: 46%;
+    width: 40px;
+    height: 5px;
+    background: white;
+    margin: auto;
+}
+
+.cards {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    margin: 20% 0;
+    width: 30%;
+    height: 250%;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 0px 4px 0 rgba(52, 73, 94, 0.849);
+}
+
+.cards img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.fondo {
+    height: 900px;
+    position: relative;
+    background-image: url(../images/SEATECPREGUNTAS.jpg);
+    overflow: hidden;
+    background-attachment: fixed;
+    background-position: center;
+    padding-top: 130px;
+}
+
+.sesgoabajo-unico {
+    z-index: 10;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 35vh 100vw;
+    border-style: solid;
+    border-color: transparent transparent #020200 transparent;
+}
+
+.titulo-patrocinadores,
+.subtitulo-patrocinadores {
+    color: black;
+    text-align: center;
+}
+
+.titulo-patrocinadores {
+    font-size: 56px;
+    margin-top: 48px;
+}
+
+.subtitulo-patrocinadores {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 64px;
+}
+
+.clientes {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 64px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.cliente {
+    width: 30%;
+}
+
+.cliente img {
+    width: 100%;
+}
+
+footer {
+    background: #020200;
+    height: auto;
+}
+
+footer section {
+    text-align: center;
+    padding: 2rem;
+}
+
+.titulo-footer,
+.subtitulo-footer {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+}
+
+.subtitulo-footer {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 64px;
+}
+
+.apartado3 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.input[type="text"],
+input[type="email"] {
+    display: inline-block;
+    width: 48%;
+    padding: 13px;
+    border: none;
+    color: white;
+    font-family: sans-serif;
+    background: rgba(37, 37, 33, .7);
+    margin-bottom: 16px;
+    border-top: 1px solid rgba(37, 37, 33, .7);
+}
+
+.textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 200px;
+    min-height: 200%;
+    background: rgba(37, 37, 33, .7);
+    padding: 13px;
+    border: none;
+    color: white;
+    font-family: sans-serif;
+    margin-bottom: 16px;
+}
+
+input[type="submit"] {
+    display: inline-block;
+    padding: 13px;
+    border: none;
+    color: white;
+    background: rgba(37, 37, 33, .7);
+    width: 96px;
+}
+
+@media screen and (max-width:900px) {
+    .card {
+        width: 48%;
+    }
+}
+
+@media screen and (max-width:610px) {
+    header .textos {
+        margin-top: 130px;
+    }
+    header .titulo {
+        font-size: 75px;
+    }
+    .card {
+        width: 90%;
+    }
+    .fondo {
+        height: auto;
+    }
+    .especial {
+        display: none;
+    }
+    .cliente {
+        width: 90%;
+        height: 200px;
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width:300px) {
+    header .textos {
+        margin-top: 100px;
+    }
+    header .titulo {
+        font-size: 65px;
+    }
+    header .subtitulo {
+        font-size: 25px;
+        margin-bottom: 32px;
+    }
+    .sobre-nosotros {
+        font-size: 46px;
+    }
+    .slogan {
+        font-size: 20px;
+    }
+    .titulo-patrocinadores {
+        font-size: 46;
+    }
+    .subtitulo-patrocinadores {
+        font-size: 20px;
+    }
+}
+
+
+/*boton de sugerencias*/
+
+:focus {
+    outline: none;
+}
+
+body {
+    background: white;
+    font-family: 'Open sans';
+}
+
+
+/* FORMULARIO =================================== */
+
+.form_wrap {
+    width: 1050px;
+    height: 530px;
+    margin: 50px auto;
+    display: flex;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Informacion de Contacto*/
+
+.cantact_info::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: hsla(54, 98%, 47%, 0.349);
+    opacity: 0.9;
+}
+
+.cantact_info {
+    width: 38%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../images/FORMULARIO.JPG');
+    background-size: cover;
+    background-position: center center;
+}
+
+.info_title,
+.info_items {
+    position: relative;
+    z-index: 2;
+    color: black;
+}
+
+.info_title {
+    margin-bottom: 60px;
+}
+
+.info_title span {
+    font-size: 100px;
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.info_title h2 {
+    font-size: 35px;
+    text-align: center;
+}
+
+.info_items p {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.info_items p:nth-child(1) span {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.info_items p:nth-child(2) span {
+    font-size: 50px;
+    margin-right: 15px;
+    margin-left: 4px;
+}
+
+
+/* Formulario de contacto*/
+
+form.form_contact {
+    width: 62%;
+    padding: 30px 40px;
+}
+
+.form_wrap h2 {
+    text-align: center;
+    margin-left: 6rem;
+}
+
+form.form_contact .user_info {
+    display: flex;
+    flex-direction: column;
+}
+
+form.form_contact label {
+    font-weight: 600;
+}
+
+form.form_contact input,
+form.form_contact textarea {
+    width: 100%;
+    padding: 8px 0px 5px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 2px solid #D1D1D1;
+    font-family: 'Open sans';
+    color: #5A5A5A;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+form.form_contact textarea {
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 90px;
+}
+
+form.form_contact input[type="submit"] {
+    width: 180px;
+    background: hsla(54, 98%, 47%, 0.349);
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    align-self: flex-end;
+    color: rgb(3, 1, 1);
+    font-family: 'Open sans';
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+form.form_contact input[type="submit"]:hover {
+    background: hsla(54, 98%, 47%, 0.349);
+}
+
+
+/* Ventana de errores*/
+
+.modal_wrap {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mensaje_modal {
+    background: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    padding: 30px 20px 15px;
+}
+
+.mensaje_modal h3 {
+    text-align: center;
+    font-family: 'Ubuntu';
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.mensaje_modal h3:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #C5C5C5;
+    margin: 10px 0px 15px;
+}
+
+.mensaje_modal p {
+    font-size: 16px;
+    color: #606060;
+}
+
+.mensaje_modal p:before {
+    content: "\f00d";
+    font-family: FontAwesome;
+    display: inline-block;
+    color: #E25151;
+    margin-right: 8px;
+}
+
+#btnClose {
+    display: inline-block;
+    padding: 3px 10px;
+    margin-top: 10px;
+    background: #E25151;
+    color: #fff;
+    border: 2px solid #B14141;
+    cursor: pointer;
+    /*float: right;*/
+}
+
+
+/* MENSAJE EXITOSO*/
+
+.mensaje-exito {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mensaje-exito h1 {
+    font-size: 35px;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mensaje-exito a {
+    display: block;
+    padding: 10px 30px;
+    background: hsla(54, 98%, 47%, 0.349);
+    text-decoration: none;
+    color: rgb(2, 0, 0);
+}
+
+.mensaje-exito a:hover {
+    background: hsla(54, 98%, 47%, 0.349);
+}

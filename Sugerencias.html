@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de contacto</title>
+
+    <link rel="stylesheet" href="css/QuienesSomosSeatec.css">
+    <!--<link rel="stylesheet" href="css/font-awesome.css">-->
+    <link rel="shortcut icon" href="iconos/SEATEC.ico" type="image/x">
+    <link rel="shortcut icon" href="iconos/SEATEC.ico" type="image/x">
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+
+    <section class="form_wrap">
+
+        <section class="cantact_info">
+            <section class="info_title">
+                <span class="fa fa-user-circle"></span>
+                <h2>INFORMACION<br>DE CONTACTO<br>SEATEC</h2>
+            </section>
+            <section class="info_items">
+                <p><span class="fa fa-envelope"></span> info: seatec.sdr.l@gmail.com</p>
+                <p><span class="fa fa-mobile"></sp
+                    
+                    an> 504 95644908<br>504 95612966</p>
+            </section>
+        </section>
+
+        <form action="enviar.php" method="post" class="form_contact">
+            <h2>Envia un mensaje</h2>
+            <div class="user_info">
+                <label for="names">Nombres *</label>
+                <input type="text" id="names" name="nombre" required>
+
+                <label for="phone">Telefono / Celular</label>
+                <input type="text" id="phone" name="telefono">
+
+                <label for="email">Correo electronico *</label>
+                <input type="text" id="email" name="correo" required>
+
+                <label for="mensaje">Mensaje *</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+
+                <input type="submit" value="Enviar Mensaje" id="btnSend">
+            </div>
+        </form>
+
+    </section>
+
+</body>
+
+</html>
